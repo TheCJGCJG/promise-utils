@@ -24,14 +24,14 @@ export default (funcs, limit = CONSTANTS.DEFAULT_PARALLEL_LIMIT) =>
 				completed.push(runningFuncPromise)
 
 				await runningFuncPromise
-		  	if (waiting.length > CONSTANTS.NUMBER_ZERO && shouldContinue) {
-		  		run()
-		  	} else {
-		  		finish()
-		  	}
+			  	if (waiting.length > CONSTANTS.NUMBER_ZERO && shouldContinue) {
+			  		run()
+			  	} else {
+			  		finish()
+			  	}
 			} catch (error) {
-		  	shouldContinue = false
-		  	fail(error)
+			  	shouldContinue = false
+			  	fail(error)
 			}
 
 		}
